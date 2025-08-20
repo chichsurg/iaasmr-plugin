@@ -1,0 +1,66 @@
+openapi: 3.1.1
+info:
+  title: IAASMR Fruits API
+  description: API pour récupérer les fruits IAASMR depuis Google Sheets
+  version: "1.0.0"
+servers:
+  - url: "https://script.google.com/macros/s/AKfycby0LdgIusoh7c8osqrFKvy1KK7F8J5KivQlLXPMadR_gyM-miEbyUwOrRPPjwfDi62hZw/exec"
+paths:
+  /fruit:
+    get:
+      summary: Récupère un fruit par numéro de ligne
+      parameters:
+        - in: query
+          name: row
+          required: true
+          schema:
+            type: integer
+          description: Le numéro de ligne du fruit
+      responses:
+        "200":
+          description: Informations sur un fruit
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                  description:
+                    type: string
+                  color:
+                    type: string
+                  classement:
+                    type: string
+  /fruits:
+    get:
+      summary: Récupère plusieurs fruits par intervalle
+      parameters:
+        - in: query
+          name: start
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: end
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Liste des fruits
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    description:
+                      type: string
+                    color:
+                      type: string
+                    classement:
+                      type: string

@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "IAASMR Fruits",
+  "name_for_model": "iaasmr_fruits",
+  "description_for_human": "Plugin pour accéder aux fruits IAASMR depuis Google Sheets.",
+  "description_for_model": "Permet de récupérer les informations d’un fruit ou d’une liste de fruits par numéro de ligne pour générer des prompts IAASMR.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://<chichsurg>.github.io/iaasmr-plugin/openapi.yaml"
+  },
+  "logo_url": "https://<chichsurg>.github.io/iaasmr-plugin/logo.png",
+  "contact_email": "tonemail@example.com",
+  "legal_info_url": "https://example.com/legal"
+}
